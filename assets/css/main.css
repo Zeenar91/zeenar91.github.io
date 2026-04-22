@@ -48,7 +48,7 @@ body {
   line-height: 1.6;
   color: var(--ink);
   background: var(--cream);
-  font-feature-settings: "ss01", "ss02", "cv11";
+  /*font-feature-settings: "ss01", "ss02", "cv11";*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
