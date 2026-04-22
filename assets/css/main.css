@@ -8,13 +8,13 @@
    ========================================================================= */
 
 :root {
-  --cream:      #f6f1e8;
-  --cream-2:    #ede6d7;
-  --paper:      #fbf8f2;
+  --cream:      #ffffff;
+  --cream-2:    #f2f2f2;
+  --paper:      #f7f7f7;
   --ink:        #000000;
   --ink-soft:   #2a2a2a;
   --ink-mute:   #6e6e6e;
-  --rule:       #d8d0bf;
+  --rule:       #e5e5e5;
   --accent:     #ba0c2f;  /* UGA Bulldog Red */
   --accent-soft: #d94a6a;
 
