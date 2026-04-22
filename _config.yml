@@ -1,0 +1,77 @@
+# Site settings
+title: Zeenar Salim
+tagline: "Designing learning. Building community. Writing it down."
+description: >-
+  Assistant Director for Instructional Development at the University of
+  Georgia's Center for Teaching and Learning. Faculty developer, instructional
+  designer, and researcher working at the intersection of pedagogy, data, and
+  generative AI.
+author: Zeenar Salim
+email: your-email@example.com
+url: "https://yourusername.github.io"
+baseurl: ""
+
+# Social / links (edit these)
+social:
+  linkedin: https://www.linkedin.com/in/your-handle
+  scholar: https://scholar.google.com/citations?user=YOUR_ID
+  orcid: https://orcid.org/0000-0000-0000-0000
+  github: https://github.com/yourusername
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:slug/
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /portfolio/:path/
+  publications:
+    output: true
+    permalink: /publications/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+
+# Navigation
+nav:
+  - title: About
+    url: /about/
+  - title: Portfolio
+    url: /portfolio/
+  - title: Publications
+    url: /publications/
+  - title: Services
+    url: /services/
+  - title: Speaking
+    url: /speaking/
+  - title: CV
+    url: /cv/
+  - title: Blog
+    url: /blog/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

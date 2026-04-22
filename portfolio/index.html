@@ -1,0 +1,34 @@
+---
+layout: default
+title: Portfolio
+permalink: /portfolio/
+---
+
+<div class="page">
+  <header class="page-header">
+    <p class="page-kicker">Portfolio</p>
+    <h1 class="page-title">Projects & programs.</h1>
+    <p class="page-subtitle">
+      Faculty development programs, data pipelines, research collaborations,
+      and the occasional creative side-project.
+    </p>
+  </header>
+
+  <div class="wrap">
+    <div class="card-grid">
+      {% assign projects = site.projects | sort: "year" | reverse %}
+      {% for project in projects %}
+        <a href="{{ project.url | relative_url }}" class="card">
+          <p class="card-kicker">{{ project.category }} · {{ project.year }}</p>
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-summary">{{ project.summary }}</p>
+          {% if project.tags %}
+            <ul class="card-tags">
+              {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

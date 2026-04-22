@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="project">
+  <header class="page-header">
+    <p class="page-kicker">{{ page.category | default: "Project" }} · {{ page.year }}</p>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.summary %}<p class="page-subtitle">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  {% if page.role or page.tools or page.collaborators %}
+  <dl class="project-meta">
+    {% if page.role %}<dt>Role</dt><dd>{{ page.role }}</dd>{% endif %}
+    {% if page.tools %}<dt>Tools</dt><dd>{{ page.tools }}</dd>{% endif %}
+    {% if page.collaborators %}<dt>With</dt><dd>{{ page.collaborators }}</dd>{% endif %}
+  </dl>
+  {% endif %}
+
+  <div class="page-body prose">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="{{ '/portfolio/' | relative_url }}" class="back-link">← All projects</a>
+  </footer>
+</article>

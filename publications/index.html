@@ -1,0 +1,33 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+---
+
+<div class="page">
+  <header class="page-header">
+    <p class="page-kicker">Publications</p>
+    <h1 class="page-title">Writing & research.</h1>
+    <p class="page-subtitle">
+      Peer-reviewed articles, book reviews, and conference work — with a
+      recurring focus on generative AI in higher education, neuromyths, and
+      faculty development.
+    </p>
+  </header>
+
+  <div class="wrap" style="max-width: var(--wrap-narrow);">
+    <ol class="pub-list">
+      {% assign pubs = site.publications | sort: "year" | reverse %}
+      {% for pub in pubs %}
+        <li class="pub-item">
+          <div class="pub-year">{{ pub.year }}</div>
+          <div>
+            <h3 class="pub-title"><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></h3>
+            <p class="pub-venue">{{ pub.venue }}{% if pub.status %} · <em>{{ pub.status }}</em>{% endif %}</p>
+            {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</div>

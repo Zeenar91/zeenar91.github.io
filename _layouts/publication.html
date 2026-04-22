@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="publication">
+  <header class="page-header">
+    <p class="page-kicker">{{ page.venue }} · {{ page.year }}</p>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.authors %}<p class="page-subtitle">{{ page.authors }}</p>{% endif %}
+  </header>
+
+  <div class="page-body prose">
+    {{ content }}
+
+    {% if page.links %}
+    <ul class="link-list">
+      {% for link in page.links %}
+        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <footer class="post-footer">
+    <a href="{{ '/publications/' | relative_url }}" class="back-link">← All publications</a>
+  </footer>
+</article>

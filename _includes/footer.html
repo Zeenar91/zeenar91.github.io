@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-col">
+      <p class="footer-brand">{{ site.title }}</p>
+      <p class="footer-tagline">{{ site.tagline }}</p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-label">Elsewhere</p>
+      <ul class="footer-links">
+        {% if site.social.linkedin %}<li><a href="{{ site.social.linkedin }}">LinkedIn</a></li>{% endif %}
+        {% if site.social.scholar %}<li><a href="{{ site.social.scholar }}">Google Scholar</a></li>{% endif %}
+        {% if site.social.orcid %}<li><a href="{{ site.social.orcid }}">ORCID</a></li>{% endif %}
+        {% if site.social.github %}<li><a href="{{ site.social.github }}">GitHub</a></li>{% endif %}
+        {% if site.email %}<li><a href="mailto:{{ site.email }}">Email</a></li>{% endif %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-label">Colophon</p>
+      <p class="footer-small">Built with Jekyll. Hosted on GitHub Pages. © {{ 'now' | date: "%Y" }} {{ site.author }}.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,107 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-kicker">Zeenar Salim · PhD</p>
+      <h1 class="hero-title">
+        Designing <em>learning.</em><br>
+        Building <em>community.</em><br>
+        Writing it down.
+      </h1>
+      <p class="hero-lede">
+        I help faculty teach more intentionally in a world being reshaped by
+        generative AI — through fellowships, consultation, research, and a
+        stubborn belief in reflective practice.
+      </p>
+    </div>
+    <aside class="hero-meta">
+      <p><strong>Based in</strong><br>Athens, Georgia</p>
+      <p><strong>At work on</strong><br>The GAIT Fellowship, The Reflective Collective, and a bibliometric study of generative AI in higher education.</p>
+      <p><strong>Currently reading</strong><br>Updating my shelf — ask me next week.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- Selected projects ------------------------------------------------- -->
+<section class="section">
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <p class="section-label">01 — Selected work</p>
+        <h2 class="section-title">Programs, pipelines, and writing I'm proud of.</h2>
+      </div>
+      <a href="{{ '/portfolio/' | relative_url }}" class="section-link">See all projects →</a>
+    </header>
+
+    <div class="card-grid">
+      {% assign featured = site.projects | where: "featured", true | sort: "year" | reverse %}
+      {% for project in featured limit: 6 %}
+        <a href="{{ project.url | relative_url }}" class="card">
+          <p class="card-kicker">{{ project.category }} · {{ project.year }}</p>
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-summary">{{ project.summary }}</p>
+          {% if project.tags %}
+            <ul class="card-tags">
+              {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+            </ul>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Recent writing ----------------------------------------------------- -->
+<section class="section">
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <p class="section-label">02 — Writing</p>
+        <h2 class="section-title">Recent publications.</h2>
+      </div>
+      <a href="{{ '/publications/' | relative_url }}" class="section-link">All publications →</a>
+    </header>
+
+    <ol class="pub-list">
+      {% assign pubs = site.publications | sort: "year" | reverse %}
+      {% for pub in pubs limit: 4 %}
+        <li class="pub-item">
+          <div class="pub-year">{{ pub.year }}</div>
+          <div>
+            <h3 class="pub-title"><a href="{{ pub.url | relative_url }}">{{ pub.title }}</a></h3>
+            <p class="pub-venue">{{ pub.venue }}</p>
+            {% if pub.authors %}<p class="pub-authors">{{ pub.authors }}</p>{% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- Latest posts ------------------------------------------------------- -->
+{% if site.posts.size > 0 %}
+<section class="section">
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <p class="section-label">03 — From the blog</p>
+        <h2 class="section-title">Latest posts.</h2>
+      </div>
+      <a href="{{ '/blog/' | relative_url }}" class="section-link">Read the blog →</a>
+    </header>
+
+    <ul class="post-list" style="padding: 0;">
+      {% for post in site.posts limit: 3 %}
+        <li>
+          <p class="meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          {% if post.excerpt %}<p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
