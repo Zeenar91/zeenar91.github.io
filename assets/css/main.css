@@ -18,7 +18,7 @@
   --accent:     #ba0c2f;  /* UGA Bulldog Red */
   --accent-soft: #d94a6a;
 
-  --serif: "Arial", "Iowan Old Style", Georgia, serif;
+  --serif: "Arial", Georgia, serif;
   --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --wrap: 72rem;
