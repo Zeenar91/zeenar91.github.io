@@ -5,7 +5,8 @@ category: Data infrastructure
 summary: A Python pipeline that turns messy multi-source OER adoption data into clean institutional reports — composite-key matched, myID-normalized, and ready for leadership.
 role: Designer and lead developer
 tools: Python, Google Colab, pandas, Google Sheets API
-featured: true
+featured: false
+published: false
 tags: [data pipeline, OER, analytics, Python]
 ---
 
